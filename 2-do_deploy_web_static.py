@@ -10,6 +10,7 @@ from fabric.api import put, run, env
 
 env.hosts = ['100.25.160.128', '35.175.104.141']
 
+
 def do_deploy(archive_path):
     """
     copies archive file from local to my webservers
