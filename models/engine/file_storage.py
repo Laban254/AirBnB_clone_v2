@@ -33,7 +33,7 @@ class FileStorage:
 
     def close(self):
         """Deserialize JSON file to objects"""
-            self.reload()
+        self.reload()
 
     def save(self):
         """Saves storage dictionary to file"""

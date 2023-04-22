@@ -63,7 +63,7 @@ class DBStorage():
         """ saves an object to the database """
 
         DBStorage.__session.commit()
-    
+
     def close(self):
         """Dispose of current session if active"""
         self.__session.remove()
