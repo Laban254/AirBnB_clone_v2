@@ -63,6 +63,10 @@ class DBStorage():
         """ saves an object to the database """
 
         DBStorage.__session.commit()
+    
+    def close(self):
+        """Dispose of current session if active"""
+        self.__session.remove()
 
     def delete(self, obj=None):
         """ deletes an object from current session """
@@ -87,3 +91,7 @@ class DBStorage():
             expire_on_commit=False
         )
         DBStorage.__session = scoped_session(session_factory)
+
+    def close(self):
+        """closes the current db session"""
+        self.__session.close()

@@ -31,6 +31,10 @@ class FileStorage:
             del FileStorage.__objects[key]
             self.save()
 
+    def close(self):
+        """Deserialize JSON file to objects"""
+            self.reload()
+
     def save(self):
         """Saves storage dictionary to file"""
         with open(FileStorage.__file_path, 'w') as f:
